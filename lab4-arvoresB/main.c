@@ -5,8 +5,6 @@ typedef struct _btree BTree;
 typedef struct _btreePage BTPage;
 typedef struct no t_no;
 
-
-intervalo(t_no *arv, int lim_inf, int lim_sup);
 static t_no *cria_no(int ndesc)
 {
     t_no *n = malloc(sizeof(t_no));
@@ -74,6 +72,20 @@ int main()
 
     raiz->ramo[0] = esq;
     raiz->ramo[1] = dir;
+
+    /* TESTES Q3 */
+
+    printf("a) [5,300]\n");
+    intervalo(raiz, 5, 300);
+    printf("\n\n");
+
+    printf("b) [50,100]\n");
+    intervalo(raiz, 50, 100);
+    printf("\n\n");
+
+    printf("c) [70,135]\n");
+    intervalo(raiz, 70, 135);
+    printf("\n");
 
     return 0;
 }
