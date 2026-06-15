@@ -1,3 +1,5 @@
+/* Alunos: Gabriel Adib - 2510466, Gabriel Félix - 2510619 */
+
 #include <stdio.h>
 #include "lab4.h"
 
@@ -5,12 +7,27 @@ typedef struct _btree BTree;
 typedef struct _btreePage BTPage;
 typedef struct no t_no;
 
+/* Questão 1: Criação manual da Árvore B de ordem 2 do enunciado */
+
+/*
+ * cria_no — Aloca e inicializa um novo nó da Árvore B.
+ *
+ * Parâmetros:
+ *   ndesc — número de chaves que o nó conterá (deve ser <= MAX).
+ *
+ * Retorno:
+ *   Ponteiro para o novo nó alocado. Todos os ponteiros ramo[] são
+ *   inicializados como NULL (nó folha por padrão).
+ */
 static t_no *cria_no(int ndesc)
 {
+    /* Aloca memória para o novo nó. */
     t_no *n = malloc(sizeof(t_no));
 
+    /* Define a quantidade de chaves do nó. */
     n->ndesc = ndesc;
 
+    /* Inicializa todos os ponteiros de ramo como NULL (folha). */
     for(int i = 0; i < MAX+1; i++)
         n->ramo[i] = NULL;
 
@@ -73,16 +90,20 @@ int main()
     raiz->ramo[0] = esq;
     raiz->ramo[1] = dir;
 
-    /* TESTES Q3 */
-
+    /* Questão 3: Testes */
+    
+    /* a) Intervalo [5, 300]: deve imprimir todas as chaves da árvore. */
     printf("a) [5,300]\n");
     intervalo(raiz, 5, 300);
     printf("\n\n");
 
+    /* b) Intervalo [50, 100]: limites coincidem com chaves existentes
+     *    (50 e 100 são excluídos), deve imprimir: 60 70 75 80 90. */
     printf("b) [50,100]\n");
     intervalo(raiz, 50, 100);
     printf("\n\n");
 
+    /* c) Intervalo [70, 135]: deve imprimir: 75 80 90 100 110 115 120 130. */
     printf("c) [70,135]\n");
     intervalo(raiz, 70, 135);
     printf("\n");
