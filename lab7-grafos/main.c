@@ -13,6 +13,7 @@ Compilação:
 
 int main()
 {
+    /*--- QUESTÃO 1 ---*/
     /*
     Mapeamento dos vértices:
     0 - Recepção
@@ -36,15 +37,23 @@ int main()
     adicionaAresta(g,4,5,1);
     adicionaAresta(g,5,6,1);
     adicionaAresta(g,4,7,1);
+    /*--- FIM QUESTÃO 1 ---*/
 
+    /*--- QUESTÃO 2 ---*/
     printf("DFS Recepcao:\n");
     DFS(g,0);
 
+    /*--- QUESTÃO 3 ---*/
     printf("\nBFS Lab1 -> Saida:\n");
     BFS(g,2,7);
-
     printf("\nBFS Lab2 -> Saida:\n");
     BFS(g,3,7);
+    
+    /*--- QUESTÃO 4 ---*/
+    removeAresta(g,4,5);
+    removeAresta(g,5,4);
+    printf("\nDFS apos remocao:\n");
+    DFS(g,0);
 
     return 0;
 }

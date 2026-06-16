@@ -7,6 +7,7 @@ Alunos:
 #ifndef GRAFO_H
 #define GRAFO_H
 
+/*--- QUESTÃO 1 ---*/
 /* lista de adjacência */
 typedef struct _viz Viz;
 struct _viz {
@@ -34,22 +35,23 @@ Grafo* criaGrafo(int nv);
     destino ---- origem
 */
 void adicionaAresta(Grafo *g, int origem, int destino, float peso);
+/*--- FIM QUESTÃO 1 ---*/
 
 /* Remove uma conexão entre dois ambientes. */
-void removeAresta(Grafo *g, int origem, int destino);
+void removeAresta(Grafo *g, int origem, int destino); /*--- QUESTÃO 4 ---*/
 
 /*
     Executa uma Busca em Profundidade (DFS).
     Percorre todos os vértices alcançáveis
     a partir do vértice inicial.
 */
-void DFS(Grafo *g, int inicio);
+void DFS(Grafo *g, int inicio); /*--- QUESTÃO 2 ---*/
 
 /*
     Executa uma Busca em Largura (BFS).
     Utilizada para encontrar caminhos mínimos
     em grafos sem peso.
 */
-void BFS(Grafo *g, int inicio, int destino);
+void BFS(Grafo *g, int inicio, int destino); /*--- QUESTÃO 3 ---*/
 
 #endif

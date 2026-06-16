@@ -8,6 +8,7 @@ Alunos:
 #include <stdlib.h>
 #include "grafo.h"
 
+/*--- QUESTÃO 1 ---*/
 /*
     Reserva memória para o grafo
     e inicializa todas as listas como vazias.
@@ -60,7 +61,9 @@ void adicionaAresta(Grafo *g, int origem, int destino, float peso)
     g->viz[destino] = novo;
     g->na++;
 }
+/*--- FIM QUESTÃO 1 ---*/
 
+/*--- QUESTÃO 2 ---*/
 /*
     Função auxiliar da DFS.
 
@@ -91,7 +94,9 @@ void DFS(Grafo *g, int inicio)
 
     DFS_rec(g,inicio,visitado);
 }
+/*--- FIM QUESTÃO 2 ---*/
 
+/*--- QUESTÃO 3 ---*/
 /*
     Busca em largura.
 
@@ -134,7 +139,9 @@ void BFS(Grafo *g, int inicio, int destino)
         }
     }
 }
+/*--- FIM QUESTÃO 3 ---*/
 
+/*--- QUESTÃO 4 ---*/
 /* Remove uma aresta da lista de adjacência. */
 void removeAresta(Grafo *g,int origem,int destino)
 {
@@ -157,3 +164,4 @@ void removeAresta(Grafo *g,int origem,int destino)
         aux = aux->prox;
     }
 }
+/*--- FIM QUESTÃO 4 ---*/
