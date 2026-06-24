@@ -17,8 +17,7 @@ int main(){
     /*
         Arquivo fornecido pelo enunciado
     */
-    char arquivo[] =
-    "textoCompactadorDescompactador.txt";
+    char arquivo[] = "frase.txt";
 
     /*
         Questão:
